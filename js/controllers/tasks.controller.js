@@ -9,3 +9,11 @@ function tasksController() {
   newTask.build()
   $( "input[type='text']" ).val('')
 }
+
+function destroyTask(task) {
+  var listID = $(task).closest('div').attr('id');
+  var taskID = $(task).closest('li').attr('data-id')
+  var list = store.lists[listID];
+  $(`li#data-${taskID}`).remove()
+  list.tasks.splice(taskID, 1, null)
+}

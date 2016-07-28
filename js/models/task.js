@@ -1,7 +1,7 @@
 'use strict';
 // Task Model
 const Task = (function (){
-  var counter = 1
+  var counter = 0
 
   return class {
 

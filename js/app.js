@@ -11,18 +11,22 @@ $(document).on('ready', function(){
   $('#add_list').on('submit', function(event){
     event.preventDefault();
     ListsController();
-
-    $('button.destroy-list').on('click', function(event){
-     event.preventDefault()
-     var id = this.id
-     destroyList(id)
    })
 
+  $('body').on('click', '.destroy-list', function(event){
+   event.preventDefault()
+   var id = this.id
+   destroyList(id)
   });
 
   $('#add_task').on('submit', function(event){
     event.preventDefault();
     tasksController();
   });
+
+  $('body').on('click', '.destroy-task', function(event){
+   event.preventDefault()
+   destroyTask(this)
+  })
 
 })

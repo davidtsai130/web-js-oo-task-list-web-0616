@@ -15,7 +15,4 @@ function destroyList(listId) {
     $(`option[value="${listId}"]`).remove()
     list.tasks = []
     store.lists.splice(listId, 1, null);
-    // store.lists = _.filter(store.lists, function(item) {
-    //   return item.listId !== listId
-    // });
 }
